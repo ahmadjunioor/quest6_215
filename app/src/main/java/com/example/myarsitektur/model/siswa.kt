@@ -1,4 +1,7 @@
-package com.example.myarsitektur.model
+package com.example.myarsitektur.model;
 
-class siswa {
-}
+data class Siswa (
+    val nama: String = "",
+    val gender: String = "",
+    val alamat: String = ""
+)
