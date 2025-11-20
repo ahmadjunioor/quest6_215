@@ -35,4 +35,52 @@ fun TampilSiswa(
                 )
             )
         }
-    )
+    ){isiRuang ->
+
+        Column(
+            modifier = Modifier.padding(isiRuang),
+            verticalArrangement = Arrangement.SpaceBetween
+        ){
+            Column(
+                modifier = Modifier.padding(
+                    all = dimensionResource(id = R.dimen.padding_medium)
+                ),
+                verticalArrangement = Arrangement.spacedBy(
+                    space = dimensionResource(id = R.dimen.padding_small)
+                )
+            ) {
+
+                items.forEach { item ->
+                    Column {
+                        Text(
+                            text = item.first.uppercase(),
+                            fontSize = 16.sp
+                        )
+                        Text(
+                            text = item.second,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 16.sp
+                        )
+                        Divider(
+                            thickness = dimensionResource(id = R.dimen.thickness_divider)
+                        )
+                    }
+                }
+                Spacer(
+                    modifier = Modifier.height(
+                        dimensionResource(id = R.dimen.padding_small)
+                    )
+                )
+
+                Button(
+                    modifier = Modifier.fillMaxWidth(),
+                    onClick = onBackButtonClicked
+                ) {
+                    Text(text = stringResource(id = R.string.back))
+                }
+            }
+
+        }
+
+    }
+}
